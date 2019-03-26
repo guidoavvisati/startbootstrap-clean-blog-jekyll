@@ -1,6 +1,6 @@
 title:             Guido Avvisati
 email:             guido.avvisati@gmail.com
-description:       Personal website
+description:       Scientific Programmer / Data Scientist
 author:            Guido Avvisati
 baseurl:           "/startbootstrap-clean-blog-jekyll"
 url:               "http://guidoavvisati.github.io"
@@ -8,6 +8,8 @@ url:               "http://guidoavvisati.github.io"
 # Social Profiles
 # twitter_username:  SBootstrap
 github_username:   guidoavvisati
+linkedin_username: guido-avvisati-6576a7120
+scholar_username: 8OeBUXgAAAAJ
 # facebook_username: StartBootstrap
 
 # Build settings

@@ -4,6 +4,21 @@
 
 @import "styles";
 
+// a:hover, a:active { color: #0085A1 }
+#author_media > a {
+    padding: 0 0.2em;
+    color: #FF8347;
+}
+
+::selection {
+    color: none;
+    background: none;
+    text-shadow: none;
+    display: block;
+}
+
+// a:hover, a:focus:hover { color: white }
+
 header.front_head {
   // TIP: Background images are set within the HTML using inline CSS!
   margin-bottom: 50px;
