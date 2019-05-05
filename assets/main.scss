@@ -4,11 +4,17 @@
 
 @import "styles";
 
-// a:hover, a:active { color: #0085A1 }
-#author_media > a {
-    padding: 0 0.2em;
-    color: #FF8347;
+a {
+  color: $gray-900;
+  @include transition-all;
+  &:focus {
+    color: none;
+  }
+  &:hover {
+    color: $primary;
+  }
 }
+a:hover, a:active { color: white }
 
 ::selection {
     color: none;
