@@ -1,16 +1,16 @@
 ---
-layout: default
+layout: home_default
 ---
 
-<!-- Page Header -->
-{% if page.background %}
-<header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
+  <!-- Page Header -->
+  {% if page.background %}
+  <header class="front_head" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
   {% else %}
-  <header class="masthead">
-    {% endif %}
+  <header class="front_head">
+  {% endif %}
     <div class="overlay"></div>
     <div class="container">
-      <div class="row">
+    <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="page-heading">
             <h1>{{ site.title }}</h1>
@@ -21,45 +21,60 @@ layout: default
         </div>
       </div>
     </div>
-  </header>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-
-        {{ content }}
-
-        <!-- Home Post List -->
-        {% for post in site.posts limit : 5 %}
-
-        <article class="post-preview">
-          <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
-            <h2 class="post-title">{{ post.title }}</h2>
-            {% if post.subtitle %}
-            <h3 class="post-subtitle">{{ post.subtitle }}</h3>
-            {% else %}
-            <h3 class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</h3>
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <ul id="author_media" class="list-inline text-center">
+            {% if site.twitter_username %}
+            <li class="list-inline-item">
+              <a href="https://www.twitter.com/{{ site.twitter_username }}" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-square fa-stack-2x"></i>
+                  <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
             {% endif %}
-          </a>
-          <p class="post-meta">Posted by
-            {% if post.author %}
-            {{ post.author }}
-            {% else %}
-            {{ site.author }}
+            {% if site.facebook_username %}
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/{{ site.facebook_username }}" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-square fa-stack-2x"></i>
+                  <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
             {% endif %}
-            on
-            {{ post.date | date: '%B %d, %Y' }} &middot; {% include read_time.html content=post.content %}</p>
-        </article>
-
-        <hr>
-
-        {% endfor %}
-
-        <!-- Pager -->
-        <div class="clearfix">
-          <a class="btn btn-primary float-right" href="{{"/posts" | relative_url }}">View All Posts &rarr;</a>
+            {% if site.linkedin_username %}
+            <li class="list-inline-item">
+              <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-linkedin fa-stack-2x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            {% endif %}
+            {% if site.github_username %}
+            <li class="list-inline-item">
+              <a href="https://github.com/{{ site.github_username }}" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="fab fa-github fa-stack-2x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            {% endif %}
+            {% if site.scholar_username %}
+            <li class="list-inline-item">
+              <a href="https://scholar.google.com/citations?user={{ site.scholar_username }}" target="_blank">
+                <span class="fa-stack fa-lg">
+                  <i class="ai ai-google-scholar ai-2x scholar-white"></i>
+                </span>
+              </a>
+            </li>
+            {% endif %}
+          </ul>
         </div>
-
       </div>
     </div>
-  </div>
+  </header>
